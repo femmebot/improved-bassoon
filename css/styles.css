@@ -1,0 +1,27 @@
+* {
+  /* outline: 1px solid #f00; */
+}
+html::before {
+  /* content: " ";
+  display: block;
+  background-image: url(../img/bear.png);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  z-index: -10; */
+}
+.parallax-bg-img {
+  content: "";
+  background-image: url(../img/bear.png);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+
+}
