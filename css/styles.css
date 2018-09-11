@@ -17,11 +17,12 @@ html::before {
   z-index: -10; */
 }
 .parallax-bg-img {
-  content: "";
-  background-image: url(../img/bear.png);
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
-  width: 100vw;
+  /* content: ""; */
+  background-image: url(../img/illo-01-01.svg);
+  background-position: -800px -1500px;
+  background-repeat: no-repeat;
+  /* background-size: auto; */
+  /* height: 100vh; */
+  /* width: 100vw; */
 
 }
