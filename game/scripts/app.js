@@ -9,16 +9,22 @@ GAME RULES:
 
 */
 
-let score, roundScore, activePlayer;
+let
+  score,
+  roundScore,
+  activePlayer,
+  gamePlaying;
+
 
 // don't show the die initially
 const hideDice = () => document.querySelector('.dice').style.display = 'none';
 
 // zero out all the things!
-const newGame = () => {
+const init = () => {
   score = [0,0];
   roundScore = 0;
   activePlayer = 0;
+  gamePlaying = true;
 
   hideDice();
 
@@ -40,7 +46,7 @@ const switchTurn = () => {
   document.querySelector(`.player-${activePlayer}-panel`).classList.add('active');
 };
 
-newGame();
+init();
 
 // Setter method using template literal to insert activePlayer into class name
 // document.querySelector(`#current-${activePlayer}`).textContent = diceRoll();
@@ -54,22 +60,24 @@ newGame();
 
 // using an ES6 anonymous function instead
 document.querySelector('.btn-roll').addEventListener('click', () => {
-  // 1. Roll die by generating random number 1 - 6
-  let diceRoll = (Math.floor(Math.random() * 6) + 1);
+  if (gamePlaying) {
+    // 1. Roll die by generating random number 1 - 6
+    let diceRoll = (Math.floor(Math.random() * 6) + 1);
 
-  // 2. Display the die image
-  const diceDOM = document.querySelector('.dice');
+    // 2. Display the die image
+    const diceDOM = document.querySelector('.dice');
 
-  diceDOM.style.display = 'block';
-  diceDOM.src = `img/dice-${diceRoll}.png`;
+    diceDOM.style.display = 'block';
+    diceDOM.src = `img/dice-${diceRoll}.png`;
 
-  // 3. If the number is not 1, display the score for the round
-  roundScore = Number(document.getElementById(`current-${activePlayer}`).textContent);
-  if ( diceRoll !== 1 ) {
-    roundScore += diceRoll;
-    document.getElementById(`current-${activePlayer}`).textContent = roundScore;
-  } else {
-    switchTurn();
+    // 3. If the number is not 1, display the score for the round
+    roundScore = Number(document.getElementById(`current-${activePlayer}`).textContent);
+    if ( diceRoll !== 1 ) {
+      roundScore += diceRoll;
+      document.getElementById(`current-${activePlayer}`).textContent = roundScore;
+    } else {
+      switchTurn();
+    }
   }
 });
 
@@ -83,10 +91,11 @@ document.querySelector('.btn-hold').addEventListener('click', () => {
   // 3. Check if player won the Game
   if ( score[activePlayer] >= 100 ) {
     alert ('You won!!');
+    gamePlaying = false;
   } else {
     switchTurn();
   };
 
 });
 
-document.querySelector('.btn-new').addEventListener('click', newGame);
+document.querySelector('.btn-new').addEventListener('click', init);
