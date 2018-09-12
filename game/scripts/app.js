@@ -82,20 +82,20 @@ document.querySelector('.btn-roll').addEventListener('click', () => {
 });
 
 document.querySelector('.btn-hold').addEventListener('click', () => {
-  console.log('button hold clicked!!!');
-  // 1. add roundScore to #score-1
-  score[activePlayer] += roundScore;
-  // 2. Update UI
-  console.log(`Score: ${ score[activePlayer] } Type: ${ typeof(score[activePlayer]) }` );
-  document.getElementById(`score-${activePlayer}`).textContent = score[activePlayer];
-  // 3. Check if player won the Game
-  if ( score[activePlayer] >= 100 ) {
-    alert ('You won!!');
-    gamePlaying = false;
-  } else {
-    switchTurn();
-  };
-
+  if (gamePlaying) {
+    // 1. add roundScore to #score-1
+    score[activePlayer] += roundScore;
+    // 2. Update UI
+    console.log(`Score: ${ score[activePlayer] } Type: ${ typeof(score[activePlayer]) }` );
+    document.getElementById(`score-${activePlayer}`).textContent = score[activePlayer];
+    // 3. Check if player won the Game
+    if ( score[activePlayer] >= 100 ) {
+      alert ('You won!!');
+      gamePlaying = false;
+    } else {
+      switchTurn();
+    };
+  }
 });
 
 document.querySelector('.btn-new').addEventListener('click', init);
