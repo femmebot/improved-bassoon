@@ -11,25 +11,25 @@ GAME RULES:
 
 let score, roundScore, activePlayer;
 
+// don't show the die initially
+const hideDice = () => document.querySelector('.dice').style.display = 'none';
+
 // zero out all the things!
 const newGame = () => {
-
   score = [0,0];
   roundScore = 0;
   activePlayer = 0;
 
+  hideDice();
+
   for (let i in score) {
   // for (i = 0; i < score.length; i++) {
-    // console.log(value);
     document.getElementById(`score-${i}`).textContent = score[i];
     document.getElementById(`current-${i}`).textContent = roundScore;
     document.querySelector(`.player-${i}-panel`).classList.remove('active');
     document.querySelector(`.player-${activePlayer}-panel`).classList.add('active');
   }
 };
-
-// don't show the die initially
-const hideDice = () => document.querySelector('.dice').style.display = 'none';
 
 const switchTurn = () => {
   hideDice();
@@ -41,14 +41,6 @@ const switchTurn = () => {
 };
 
 newGame();
-hideDice();
-
-// callback function b/c it's called by another function
-// passed into another function as an argument
-// const buttonRollHandler = () => {
-//   do something
-//   console.log('button clicked');
-// }
 
 // Setter method using template literal to insert activePlayer into class name
 // document.querySelector(`#current-${activePlayer}`).textContent = diceRoll();
@@ -97,6 +89,4 @@ document.querySelector('.btn-hold').addEventListener('click', () => {
 
 });
 
-document.querySelector('.btn-new').addEventListener('click', () => {
-  newGame();
-});
+document.querySelector('.btn-new').addEventListener('click', newGame);
