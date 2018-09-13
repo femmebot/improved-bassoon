@@ -95,10 +95,7 @@ document.querySelector('.btn-hold').addEventListener('click', () => {
       alert ('You won!!');
       gamePlaying = false;
       document.querySelector('.btn-roll').disabled = true;
-      document.querySelector('.btn-roll').removeAttribute('hover', 'hover');
       document.querySelector('.btn-hold').disabled = true;
-      document.querySelector('.btn-hold').removeAttribute('hover', 'hover');
-
     } else {
       switchTurn();
     };
