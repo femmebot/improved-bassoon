@@ -27,6 +27,8 @@ const init = () => {
   gamePlaying = true;
 
   hideDice();
+  document.querySelector('.btn-roll').disabled = false;
+  document.querySelector('.btn-hold').disabled = false;
 
   for (let i in score) {
   // for (i = 0; i < score.length; i++) {
@@ -92,6 +94,11 @@ document.querySelector('.btn-hold').addEventListener('click', () => {
     if ( score[activePlayer] >= 100 ) {
       alert ('You won!!');
       gamePlaying = false;
+      document.querySelector('.btn-roll').disabled = true;
+      document.querySelector('.btn-roll').removeAttribute('hover', 'hover');
+      document.querySelector('.btn-hold').disabled = true;
+      document.querySelector('.btn-hold').removeAttribute('hover', 'hover');
+
     } else {
       switchTurn();
     };
