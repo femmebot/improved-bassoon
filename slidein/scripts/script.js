@@ -21,7 +21,7 @@ const sliderImages = document.querySelectorAll('.slide-in');
 
 const checkSlide = (event) => {
   // 1. loop over every image and figure out position where it needs to be shown
-  sliderImages.forEach(slideImage => {
+  sliderImages.forEach(sliderImage => {
     // console.log(event);
     // console.log(window.scrollY); // user scroll depth from top
     // console.log(window.innerHeight); // distance to the bottom of viewport
@@ -29,13 +29,17 @@ const checkSlide = (event) => {
     const slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height/2;
     // offsetTop = dist from top of window to top of image
     const imageBottom = sliderImage.offsetTop + sliderImage.height;
-
     const isHalfShown = slideInAt > sliderImage.offsetTop;
-    const imageHasNotScrolledPast = window.scrollY < imageBottom; 
+    const isNotScrolledPast = window.scrollY < imageBottom;
+    if (isHalfShown && isNotScrolledPast) {
+      sliderImage.classList.add('active');
+    } else {
+      sliderImage.classList.remove('active');
+    };
 
     // 2.
   })
 };
 
 // addEventListener takes two args (event, function)
-window.addEventListener('scroll', debounce(checkSlide, 500));
+window.addEventListener('scroll', debounce(checkSlide));
