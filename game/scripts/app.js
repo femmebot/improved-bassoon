@@ -29,14 +29,13 @@ const init = () => {
   hideDice();
   document.querySelector('.btn-roll').disabled = false;
   document.querySelector('.btn-hold').disabled = false;
-
   for (let i in score) {
   // for (i = 0; i < score.length; i++) {
     document.getElementById(`score-${i}`).textContent = score[i];
     document.getElementById(`current-${i}`).textContent = roundScore;
     document.querySelector(`.player-${i}-panel`).classList.remove('active');
-    document.querySelector(`.player-${activePlayer}-panel`).classList.add('active');
   }
+  document.querySelector(`.player-${activePlayer}-panel`).classList.add('active');
 };
 
 const switchTurn = () => {
@@ -88,7 +87,7 @@ document.querySelector('.btn-hold').addEventListener('click', () => {
     // 1. add roundScore to #score-1
     score[activePlayer] += roundScore;
     // 2. Update UI
-    console.log(`Score: ${ score[activePlayer] } Type: ${ typeof(score[activePlayer]) }` );
+    // console.log(`Score: ${ score[activePlayer] } Type: ${ typeof(score[activePlayer]) }` );
     document.getElementById(`score-${activePlayer}`).textContent = score[activePlayer];
     // 3. Check if player won the Game
     if ( score[activePlayer] >= 100 ) {
