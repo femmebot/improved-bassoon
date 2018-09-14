@@ -44,15 +44,40 @@ p {
 }
 .bg-img {
   /* content: ""; */
-  background-image: url(../img/illo-01-01.svg);
+  background-image: url(../img/illo-01.svg);
   /* background-position: -800px -1500px; */
-  background-position: center;
+  background-position: 0 0;
   background-repeat: no-repeat;
   background-attachment: fixed;
   /* background-size: auto; */
   /* height: 100vh; */
   /* width: 100vw; */
 }
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .pos-0 {
-  background-position: -800px -1500px;
+  background-position: -800px -1100px;
+}
+.pos-1 {
+  background-position: -2500px -1600px;
+}
+.pos-2 {
+  background-position: -1700px -2500px;
+}
+.pos-3 {
+  background-position: -500px -500px;
+}
+.bounceIn {
+  animation: bounceIn 2s;
 }
