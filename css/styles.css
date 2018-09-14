@@ -16,13 +16,43 @@ html::before {
   position: fixed;
   z-index: -10; */
 }
-.parallax-bg-img {
+body {
+  margin: 0;
+  padding: 0;
+  height: 3000px;
+}
+header,
+article {
+  width: calc(100% - 60px);
+  max-width: 300px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+section {
+  padding: 30px;
+  border: 1px solid #999;
+  margin: 1000px 0;
+  background-color: #fff;
+}
+h1,
+p {
+  font-family: -apple-system, Roboto, BlinkMacSystemFont, “Segoe UI”, Helvetica, Arial, sans-serif;
+}
+p {
+  font-size: .8rem;
+  line-height: 1.5;
+}
+.bg-img {
   /* content: ""; */
   background-image: url(../img/illo-01-01.svg);
-  background-position: -800px -1500px;
+  /* background-position: -800px -1500px; */
+  background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   /* background-size: auto; */
   /* height: 100vh; */
   /* width: 100vw; */
-
+}
+.pos-0 {
+  background-position: -800px -1500px;
 }
