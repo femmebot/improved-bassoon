@@ -71,7 +71,7 @@ p {
   transition: background-position 1.5s ease-in-out 0s;
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+/* @media only screen and (-webkit-min-device-pixel-ratio: 2) {
   .bg-img {
     background-size: 400%;
   }
@@ -92,4 +92,4 @@ p {
     transition: background-position 1.5s ease-in-out 0s;
   }
 
-}
+} */
