@@ -73,6 +73,9 @@ p {
 
 
 @media screen and (min-device-width : 2048px) and (max-device-width : 2048px) and (min-device-height : 1536px) and (max-device-height : 1536px) and (min-width: 2048px) and (max-width: 2048px) {
+  p {
+    color: #f00;
+  }
   .pos-0 {
     background-position: -375px -350px;
     transition: background-position 1.5s ease-in-out 0s;
