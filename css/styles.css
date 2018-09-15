@@ -26,12 +26,12 @@ article {
   width: calc(100% - 60px);
   max-width: 300px;
   margin: 0 auto;
-  padding-bottom: 20px;
+  padding: 250px 0;
 }
 section {
   padding: 30px;
   border: 1px solid #999;
-  margin: 1000px 0;
+  margin-bottom: 500px;
   background-color: #fff;
 }
 h1,
@@ -56,14 +56,23 @@ p {
 
 .pos-0 {
   background-position: -800px -1100px;
-  transition: background-position 1s ease-in-out 0s;
+  transition: background-position 1.5s ease-in-out 0s;
 }
 .pos-1 {
   background-position: -2500px -1600px;
+  transition: background-position 1.5s ease-in-out 0s;
 }
 .pos-2 {
   background-position: -1700px -2500px;
+  transition: background-position 1.5s ease-in-out 0s;
 }
 .pos-3 {
   background-position: -500px -500px;
+  transition: background-position 1.5s ease-in-out 0s;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  .bg-img {
+    background-size: 200%;
+  }
 }
