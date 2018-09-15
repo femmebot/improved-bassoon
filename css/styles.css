@@ -55,19 +55,19 @@ p {
 }
 
 .pos-0 {
-  background-position: -800px -1100px;
+  background-position: -750px -700px;
   transition: background-position 1.5s ease-in-out 0s;
 }
 .pos-1 {
-  background-position: -2500px -1600px;
+  background-position: -2700px -1200px;
   transition: background-position 1.5s ease-in-out 0s;
 }
 .pos-2 {
-  background-position: -1700px -2500px;
+  background-position: -1600px -2300px;
   transition: background-position 1.5s ease-in-out 0s;
 }
 .pos-3 {
-  background-position: -500px -500px;
+  background-position: -200px -600px;
   transition: background-position 1.5s ease-in-out 0s;
 }
 
@@ -75,4 +75,5 @@ p {
   .bg-img {
     background-size: 400%;
   }
+
 }
