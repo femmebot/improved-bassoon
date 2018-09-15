@@ -71,12 +71,10 @@ p {
   transition: background-position 1.5s ease-in-out 0s;
 }
 
-/* @media only screen and (-webkit-min-device-pixel-ratio: 2) {
-  .bg-img {
-    background-size: 400%;
-  }
+
+@media screen and (min-device-width : 1024px) and (max-device-width : 1024px) and (min-device-height : 1366px) and (max-device-height : 1366px) and (min-width: 1024px) and (max-width: 1024px) {
   .pos-0 {
-    background-position: -325px -350px;
+    background-position: -375px -350px;
     transition: background-position 1.5s ease-in-out 0s;
   }
   .pos-1 {
@@ -84,12 +82,14 @@ p {
     transition: background-position 1.5s ease-in-out 0s;
   }
   .pos-2 {
-    background-position: -800px -1150px;
+    background-position: -1600px -2300px;
     transition: background-position 1.5s ease-in-out 0s;
   }
   .pos-3 {
-    background-position: -100px -300px;
+    background-position: -200px -600px;
     transition: background-position 1.5s ease-in-out 0s;
   }
+}
+@media screen and (min-device-width : 1024px) and (max-device-width : 1024px) and (min-device-height : 1366px) and (max-device-height : 1366px) and (min-width: 1366px) and (max-width: 1366px) {
 
-} */
+}
